@@ -9,6 +9,7 @@ import PropertyMap from '@/components/PropertyMap'
 import Property from '@/public/types/types'
 import { APIProvider } from '@vis.gl/react-google-maps'
 import SmoothScrollWrapper from '@/components/SmoothScrollWrapper'
+import { Suspense } from 'react'
 
 
 
@@ -55,7 +56,9 @@ export default function Page() {
     const totalProperty = filteredProperty.length
 
     return (
+        
         <SmoothScrollWrapper>
+        <Suspense>
         <div className='bg-gray'>
             <div className='section pt-10'>
                 <div className='flex justify-between items-center py-4'>
@@ -101,6 +104,8 @@ export default function Page() {
                 }
             </div>
         </div>
+        </Suspense>
         </SmoothScrollWrapper>
+
     )
 }

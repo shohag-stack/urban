@@ -2,9 +2,6 @@ import React from 'react'
 
 export default function ContactForm() {
 
-
-    const image = "/images/architect.png"
-
     return (
         <div>
             <div>
