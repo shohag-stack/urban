@@ -5,6 +5,7 @@ import { useState } from 'react'
 import SearchInput from '@/components/SearchInput'
 import SelectFilter from '../components/SelectFilter'
 import { usePathname , useSearchParams, useRouter } from 'next/navigation'
+import { X } from "lucide-react"
 
 
 
@@ -14,6 +15,7 @@ export function FiltersNav() {
   const [price, setPrice] = useState('')
   const [beds, setBeds] = useState("")
   const [homeTypes, setHomeTypes] = useState('')
+  const [deleteFilter, setDeleteFilter] = useState(false)
 
   const priceOptions = [
   { value: "0-500", label: "$0 - $500" },
@@ -53,8 +55,17 @@ export function FiltersNav() {
   } else {
     params.delete("transactionType")
   }
-      router.push(`?${params.toString()}`)
-  }, [transactionType,price,beds,homeTypes,router])
+  if(deleteFilter) {
+     // clear all
+     setPrice("")
+     setBeds("")
+     setHomeTypes("")
+     setTransactionType("")
+    setDeleteFilter(false)
+    }
+
+    router.push(`?${params.toString()}`)
+  }, [transactionType,price,beds,homeTypes,router,deleteFilter])
 
   return (
 
@@ -68,6 +79,7 @@ export function FiltersNav() {
             <SelectFilter value={price} onChange={setPrice} options={priceOptions}/>
             <SelectFilter value={beds} onChange={setBeds} options={bedOptions}/>
             <SelectFilter value={homeTypes} onChange={setHomeTypes} options={homeOptions}/>
+            <button onClick={()=>setDeleteFilter(true) } className='px-4 py-3 focus:outline-none appearance-none h-full underline flex justify-center items-center gap-1 hover:text-secondary cursor-pointer'> <X size={20}/> Clear filter</button>
           </div>
         </div>
         )
