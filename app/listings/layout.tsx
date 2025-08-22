@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { Suspense } from 'react'
 import PropertyFilters from '@/components/PropertyFilters'
 
 export default function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -7,7 +7,9 @@ export default function Layout({ children }: Readonly<{ children: React.ReactNod
   return (
     <>
       <PropertyFilters/>
-     {children}
+     <Suspense>
+        {children}
+     </Suspense>
     </>
     
   )

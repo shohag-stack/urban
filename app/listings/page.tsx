@@ -1,3 +1,4 @@
+'use client'
 import SmoothScrollWrapper from "../../components/SmoothScrollWrapper"
 import {PropertyListings} from "@/components/PropertyListings"
 
