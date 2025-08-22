@@ -6,11 +6,11 @@ import Image from "next/image"
 import SideBar from "@/components/SideBar"
 import SmoothScrollWrapper from "@/components/SmoothScrollWrapper"
 
-export default function page() {
+export default function Page() {
 
-    const { slug } = useParams()
+    const { slug } = useParams<{ slug: string }>()
 
-    const [properties, setProperties] = useState<any>(null)
+    const [properties, setProperties] = useState<typeof property[0] | null>(null)
 
     const bath = "/icon/bath.svg";
     const bed = "/icon/bed.svg";
@@ -18,7 +18,7 @@ export default function page() {
     const home = "/icon/home.svg";
 
     useEffect(() => {
-        const slugProducts = property.find((item) => item.href == slug)
+        const slugProducts = property.find((item) => item.href === slug) ?? null
        setProperties(slugProducts)
     }, [slug])
 
@@ -55,7 +55,7 @@ export default function page() {
                                     <h2>${properties.price}</h2>
                                 </div>
                                 <div className="special pt-10">
-                                    <h5 className="font-normal">What's special</h5>
+                                    <h5 className="font-normal">What&apos;s special</h5>
                                     <div className="flex flex-wrap gap-2 py-4">
                                         {properties.tags.map((item : string,idx:number)=> (
                                             <button className="btn-secondary font-normal text-sm" key={idx} >  {item} </button>

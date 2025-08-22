@@ -1,11 +1,10 @@
 "use client"
 import React from 'react'
-import Image from 'next/image'
 import { useState, useRef } from 'react'
 import {motion} from "framer-motion"
 import {CirclePlay} from "lucide-react"
 
-export default function () {
+export default function Gallery () {
 
     const images = [
         {src: "/images/exceptional.png", title: "exceptional", video: "/videos/first.mp4"},

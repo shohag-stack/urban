@@ -6,7 +6,6 @@ export type AgentProps = {
     agent: {
         name: string;
         email: string;
-        photo: string;
         image: string
     }
 }
