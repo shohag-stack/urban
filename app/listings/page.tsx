@@ -12,7 +12,7 @@ import SmoothScrollWrapper from '@/components/SmoothScrollWrapper'
 
 
 
-export default function page() {
+export default function Page() {
 
 
     const [view, setView] = useState('list')

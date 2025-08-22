@@ -8,7 +8,7 @@ import { usePathname , useSearchParams, useRouter } from 'next/navigation'
 
 
 
-export default function layout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
   
   const [transactionType, setTransactionType] = useState("")
   const [price, setPrice] = useState('')
