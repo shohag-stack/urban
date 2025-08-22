@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect } from 'react'
+import React, { Suspense, useEffect } from 'react'
 import ToggleButton from '../components/ToggleButton'
 import { useState } from 'react'
 import SearchInput from '@/components/SearchInput'
@@ -8,7 +8,7 @@ import { usePathname , useSearchParams, useRouter } from 'next/navigation'
 
 
 
-export default function PropertyFilters() {
+function FiltersNav() {
   
   const [transactionType, setTransactionType] = useState("")
   const [price, setPrice] = useState('')
@@ -73,5 +73,14 @@ export default function PropertyFilters() {
         )
       }
     </div>
+  )
+}
+
+
+export default function PropertyFilters() {
+  return (
+    <Suspense fallback={<div>Filter is listings...</div>}>
+        <FiltersNav/>
+    </Suspense>
   )
 }

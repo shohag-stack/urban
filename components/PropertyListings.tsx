@@ -9,7 +9,7 @@ import PropertyMap from '@/components/PropertyMap'
 import Property from '@/public/types/types'
 import { APIProvider } from '@vis.gl/react-google-maps'
 
-export default function PropertyListings() {
+function ListingsContent() {
     const [view, setView] = useState('list')
     const searchParams = useSearchParams()
     const transactionType = searchParams.get('transactionType')
@@ -96,4 +96,16 @@ export default function PropertyListings() {
             </div>
         </div>
     )
+}
+
+
+
+
+
+export default function PropertyListings() {
+  return (
+    <Suspense fallback={<div>Loading listings...</div>}>
+      <ListingsContent />
+    </Suspense>
+  )
 }
