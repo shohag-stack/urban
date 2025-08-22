@@ -15,7 +15,7 @@ export default function Page() {
 
     return (
         <SmoothScrollWrapper>
-            <Suspense fallback={<PropertyListingsLoading />}>
+            <Suspense fallback={<PropertyListingsLoading/>}>
                 <PropertyListings />
             </Suspense>
         </SmoothScrollWrapper>
