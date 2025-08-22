@@ -10,10 +10,12 @@ export default function Layout({ children }: Readonly<{ children: React.ReactNod
   })
 
   return (
+    <>
     <Suspense fallback={<div>Loading filters...</div>}>
       <PropertyFilters/>
-      {children}
     </Suspense>
+    {children}
+    </>
     
   )
 }
