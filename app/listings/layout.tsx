@@ -5,10 +5,12 @@ import dynamic from 'next/dynamic'
 
 export default function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
 
-  const PropertyFilters = dynamic(()=> import('../../components/PropertyFilters'))
+  const PropertyFilters = dynamic(()=> import('../../components/PropertyFilters'), {
+    ssr: false,
+  })
 
   return (
-    <Suspense fallback>
+    <Suspense fallback={<div>Loading filters...</div>}>
       <PropertyFilters/>
       {children}
     </Suspense>

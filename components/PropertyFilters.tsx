@@ -54,7 +54,7 @@ export default function PropertyFilters() {
     params.delete("transactionType")
   }
       router.push(`?${params.toString()}`)
-  }, [transactionType,price,beds,homeTypes,router, searchParams])
+  }, [transactionType,price,beds,homeTypes,router])
 
   return (
 
