@@ -1,6 +1,5 @@
-'use client'
 import SmoothScrollWrapper from "../../components/SmoothScrollWrapper"
-import PropertyListings from "@/components/PropertyListings"
+import {PropertyListings} from "@/components/PropertyListings"
 
 export default function Page() {
 
@@ -11,4 +10,3 @@ export default function Page() {
     )
 }
 
-export const dynamic = 'force-dynamic'

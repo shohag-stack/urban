@@ -8,7 +8,7 @@ import { usePathname , useSearchParams, useRouter } from 'next/navigation'
 
 
 
-export default function FiltersNav() {
+export function FiltersNav() {
   
   const [transactionType, setTransactionType] = useState("")
   const [price, setPrice] = useState('')

@@ -1,5 +1,5 @@
 import { Suspense } from "react"
-import FiltersNav from "./FiltersNav"
+import {FiltersNav} from "./FiltersNav"
 
 export default function PropertyFilters() {
   return (
