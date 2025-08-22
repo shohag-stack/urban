@@ -54,7 +54,7 @@ export default function Layout({ children }: Readonly<{ children: React.ReactNod
     params.delete("transactionType")
   }
       router.push(`?${params.toString()}`)
-  }, [transactionType,price,beds,homeTypes])
+  }, [transactionType,price,beds,homeTypes,router, searchParams])
 
   return (
 

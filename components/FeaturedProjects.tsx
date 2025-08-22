@@ -1,5 +1,4 @@
 import property from "../public/Data/property";
-import Image from "next/image";
 import PropertyCard from "./cards/PropertyCard";
 export default function FeaturedProjects( {title} :{title:string | null}) {
     
