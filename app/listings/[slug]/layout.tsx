@@ -4,10 +4,7 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import {ChevronLeft, ChevronRight} from "lucide-react"
 
-
-
 export default function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
-  
 
   const pathname = usePathname()
   const isListingPage = pathname === "/listings"

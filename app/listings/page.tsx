@@ -1,14 +1,10 @@
 'use client'
 import SmoothScrollWrapper from "../../components/SmoothScrollWrapper"
 import PropertyListingsLoading from "../../components/PropertyListingsLoading"
+import PropertyListings from "@/components/PropertyListings"
 import { Suspense } from "react"
-import dynamic from "next/dynamic"
 // Main page component with Suspense boundary
 
-const PropertyListings = dynamic(() => import('../../components/PropertyListings'), {
-    ssr: false,
-    loading: () => <PropertyListingsLoading />
-})
 
 
 export default function Page() {
@@ -21,3 +17,5 @@ export default function Page() {
         </SmoothScrollWrapper>
     )
 }
+
+export const dynamic = 'force-dynamic'
