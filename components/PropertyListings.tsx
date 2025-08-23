@@ -22,7 +22,7 @@ function ListingsContent() {
 
     const parsePriceRange = (priceRange: string | null) => {
         if (!priceRange) return { min: 0, max: Infinity }
-        
+
         if (priceRange.includes('-')) {
             const [min, max] = priceRange.split('-')
             return {
@@ -35,7 +35,7 @@ function ListingsContent() {
                 max: Infinity
             }
         }
-        
+
         return { min: 0, max: Infinity }
     }
 
@@ -57,7 +57,7 @@ function ListingsContent() {
                 <div className='flex justify-between items-center py-4'>
                     <div>
                         <h6>Viewing {totalProperty} Homes {transactionType ? ` for ${transactionType}` : ""} in New York</h6>
-                        <p>Showing listings marketed by all brokers in the searched area.</p>
+                        <p className='md:text-md text-md'>Showing listings marketed by all brokers in the searched area.</p>
                     </div>
                     <div className='items-end'>
                         <ToggleButton options={["List", "Map"]} onChange={setView} />
@@ -66,7 +66,7 @@ function ListingsContent() {
 
                 {
                     view === "list" ? (
-                        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6`}>
+                        <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6`}>
                             {
                                 filteredProperty.map((property, idx) => {
                                     return (
@@ -76,8 +76,8 @@ function ListingsContent() {
                             }
                         </div>
                     ) : (
-                        <div className={`flex relative gap-15`}>
-                            <div className='flex-1/2 flex flex-col gap-y-2 overflow-y-scroll'>
+                        <div className={`flex md:flex-row flex-col relative gap-15`}>
+                            <div className=' md:flex-1/2 hidden flex-col gap-y-2 overflow-y-scroll'>
                                 {
                                     filteredProperty.map((property, idx) => {
                                         return (
@@ -86,7 +86,7 @@ function ListingsContent() {
                                     })
                                 }
                             </div>
-                            <div className='flex-1/2 h-[80vh] sticky top-30'>
+                            <div className=' w-full md:flex-1/2 h-[80vh] md:sticky top-30'>
                                 <APIProvider apiKey={mapKey}>
                                     <PropertyMap hoverProperty={hoverProperty} filteredProperty={filteredProperty} />
                                 </APIProvider>
@@ -101,9 +101,9 @@ function ListingsContent() {
 
 
 export function PropertyListings() {
-  return (
-    <Suspense fallback={<PropertyListingsLoading/>}>
-      <ListingsContent />
-    </Suspense>
-  )
+    return (
+        <Suspense fallback={<PropertyListingsLoading />}>
+            <ListingsContent />
+        </Suspense>
+    )
 }

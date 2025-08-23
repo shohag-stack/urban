@@ -24,10 +24,10 @@ export default function FooterTop() {
                 </div>
                 <div className="info">
                     <div>
-                        <h2 className='pb-10'>Building Dreams, One Home at a Time</h2>
+                        <h2 className=' pb-4 md:pb-10'>Building Dreams, One Home at a Time</h2>
                         <p>These should help convey a sense of aspiration and possibility, which are often associated with the real estate market. These should help convey a sense of aspiration and possibility, which are often associated with the real estate market. These should help convey a sense of aspiration and possibility, which are often associated with the real estate market.</p>
                     </div>
-                    <div className="details grid grid-cols-2 gap-10 pt-10">
+                    <div className="details grid grid-cols-1 md:grid-cols-2 gap-10 pt-10">
                         <div>
                             <h4>150+</h4>
                             <p>These should help convey a sense of aspiration and possibility, which are often associated with the real estate market.</p>

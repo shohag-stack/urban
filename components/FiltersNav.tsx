@@ -72,14 +72,14 @@ export function FiltersNav() {
     <div>
       {
         isListingPage && (
-          <div className='section pb-4'>
-          <div className='py-20 sm:py-15 md:py-4 flex gap-2'>
+          <div className='section pb-0 md:pb-4'>
+          <div className='py-10 pt-15 md:pt-15 sm:py-15 md:py-4 sm:flex flex flex-wrap md:gap-2 gap-4'>
             <SearchInput/>
             <ToggleButton options={["Buy", 'Rent']} onChange={setTransactionType} />
             <SelectFilter value={price} onChange={setPrice} options={priceOptions}/>
             <SelectFilter value={beds} onChange={setBeds} options={bedOptions}/>
             <SelectFilter value={homeTypes} onChange={setHomeTypes} options={homeOptions}/>
-            <button onClick={()=>setDeleteFilter(true) } className='px-4 py-3 focus:outline-none appearance-none h-full underline flex justify-center items-center gap-1 hover:text-secondary cursor-pointer'> <X size={20}/> Clear filter</button>
+            <button onClick={()=>setDeleteFilter(true) } className='px-4 py-3 focus:outline-none appearance-none h-full underline flex justify-center items-center gap-1 hover:text-secondary cursor-pointer text-[9] md:text-sm'> <X size={20}/> Clear filter</button>
           </div>
         </div>
         )

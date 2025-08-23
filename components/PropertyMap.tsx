@@ -37,6 +37,7 @@ export default function PropertyMap({filteredProperty, hoverProperty} : MapPrope
           mapId={'DEMO_MAP_ID'}
           gestureHandling={'greedy'}
           disableDefaultUI={true}
+          controlSize={2}
         >
         {
           filteredProperty.map((property, idx)=>{
@@ -74,13 +75,13 @@ export default function PropertyMap({filteredProperty, hoverProperty} : MapPrope
                           <div className="flex items-center justify-between">
                               <h6 className="text-sm mb-0 px-2 py-2 bg-gray rounded-full">${currentProperty.price}</h6>
                           </div>
-                          <div className="property-details flex flex-col gap-3">
-                                  <div className="flex justify-between mt-2 ">
-                                  <div className="text-md text-gray-500 ml-2 flex items-center gap-2"> <Image className="w-[20] h-[20]" src={bed} alt="bed" width={16} height={18} /> <p className="mb-0">{currentProperty.bedrooms} Beds</p></div>
-                                  <div className="text-md text-gray-500 ml-2 flex items-center gap-2"> <Image className="w-[20] h-[20]" src={bath} alt="bath" width={16} height={18} /> <p className="mb-0">{currentProperty.bathrooms.full} baths</p></div>
-                                  <div className="text-md text-gray-500 ml-2 flex items-center gap-2"> <Image className="w-[20] h-[20]" src={home} alt="home" width={16} height={18} /> <p className="mb-0">{currentProperty.area} sqft</p></div>
+                          <div className="property-details flex flex-col gap-1 md:gap-3">
+                                  <div className="flex flex-wrap justify-between mt-2 ">
+                                  <div className="text-md text-gray-500 ml-2 flex items-center gap-1 md:gap-2"> <Image className=" w-[14] h-[14] md:w-[20] md:h-[20]" src={bed} alt="bed" width={16} height={18} /> <p className="mb-0 text-[13px] md:text-md">{currentProperty.bedrooms} Beds</p></div>
+                                  <div className="text-md text-gray-500 ml-2 flex items-center gap-1 md:gap-2"> <Image className="w-[14] h-[14] md:w-[20] md:h-[20]" src={bath} alt="bath" width={16} height={18} /> <p className="mb-0 text-[13px] md:text-md">{currentProperty.bathrooms.full} baths</p></div>
+                                  <div className="text-md text-gray-500 ml-2 flex items-center gap-1 md:gap-2"> <Image className="w-[14] h-[14] md:w-[20] md:h-[20]" src={home} alt="home" width={16} height={18} /> <p className="mb-0 text-[13px] md:text-md">{currentProperty.area} sqft</p></div>
                                   </div>
-                                  <div className="text-md text-gray-500 ml-2 flex items-center gap-2"> <Image className="w-[20] h-[20]" src={mapI} alt="map" width={16} height={18} /> <p className="mb-0">{currentProperty.location}</p></div>
+                                  <div className="text-md text-gray-500 ml-2 flex items-center gap-2"> <Image className="w-[14] h-[14] md:w-[20] md:h-[20]" src={mapI} alt="map" width={16} height={18} /> <p className="mb-0 text-sm md:text-md">{currentProperty.location}</p></div>
                           </div>
                           </Link>
                       </div>

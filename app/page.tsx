@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <SmoothScrollWrapper>
-      <main className="min-w-dvh min-h-dvh overflow-hidden">
+      <main className="min-w-dvw min-h-dvh overflow-hidden">
         <Hero />
         <AboutInfo />
         <FeaturedProjects title='Featured Projects'/>

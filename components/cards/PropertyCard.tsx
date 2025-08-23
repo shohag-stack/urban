@@ -25,11 +25,11 @@ export default function PropertyCard({property} : PropertyCardProps) {
                 </div>
                 <div className="property-details flex flex-col gap-3">
                         <div className="flex justify-between mt-2 ">
-                        <div className=" text-gray-500 ml-2 flex items-center gap-2"> <Image className="w-[20] h-[20]" src={bed} alt="bed" width={16} height={18} /> <p className="mb-0 text-sm">{property.bedrooms} Beds</p></div>
-                        <div className=" text-gray-500 ml-2 flex items-center gap-2"> <Image className="w-[20] h-[20]" src={bath} alt="bath" width={16} height={18} /> <p className="mb-0 text-sm">{property.bathrooms.full} baths</p></div>
-                        <div className=" text-gray-500 ml-2 flex items-center gap-2"> <Image className="w-[20] h-[20]" src={home} alt="home" width={16} height={18} /> <p className="mb-0 text-sm">{property.area} sqft</p></div>
+                        <div className=" text-gray-500 ml-2 flex items-center gap-2"> <Image className=" w-[14] md:w-[20] h-[14] md:h-[20]" src={bed} alt="bed" width={16} height={18} /> <p className="mb-0 text-sm">{property.bedrooms} Beds</p></div>
+                        <div className=" text-gray-500 ml-2 flex items-center gap-2"> <Image className="w-[14] md:w-[20] h-[14] md:h-[20]" src={bath} alt="bath" width={16} height={18} /> <p className="mb-0 text-sm">{property.bathrooms.full} baths</p></div>
+                        <div className=" text-gray-500 ml-2 flex items-center gap-2"> <Image className="w-[14] md:w-[20] h-[14] md:h-[20]" src={home} alt="home" width={16} height={18} /> <p className="mb-0 text-sm">{property.area} sqft</p></div>
                         </div>
-                        <div className="text-md text-gray-500 ml-2 flex items-center gap-2"> <Image className="w-[20] h-[20]" src={map} alt="map" width={16} height={18} /> <p className="mb-0 text-sm">{property.location}</p></div>
+                        <div className="text-md text-gray-500 ml-2 flex items-center gap-2"> <Image className="w-[14] md:w-[20] h-[14] md:h-[20]" src={map} alt="map" width={16} height={18} /> <p className="mb-0 text-sm">{property.location}</p></div>
                 </div>
                 </Link>
             </div>

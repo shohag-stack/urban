@@ -14,7 +14,7 @@ export default function Accordion({ items } : { items: typeof faq }) {
   return (
     <div className="w-full max-w-5xl mx-auto divide-y divide-gray-200">
       {items.map((item, index) => (
-        <div key={index} className="py-5">
+        <div key={index} className=" py-1 md:py-5">
           <button
             onClick={() => toggle(index)}
             className="flex justify-between items-center w-full py-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"

@@ -25,12 +25,12 @@ export default function Hero(){
     },
   };
     return (
-        <div className="bg-secondary relative" style={{
+        <div className="bg-secondary relative w-full overflow-hidden" style={{
             backgroundImage: `url(${hero})`,
             backgroundSize: "cover",
             backgroundPosition: "center"
         }}>
-            <div className="hero py-20 min-h-screen flex items-center justify-center">
+            <div className="hero pt-20 md:py-20 min-h-screen flex items-center justify-center">
                 <div className="container mx-auto px-4">
                     <div className="max-w-2xl">
                         <motion.div
@@ -41,7 +41,7 @@ export default function Hero(){
                             style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}
                             >
                             {heading.split(" ").map((word, index) => (
-                                <motion.h1 className="text-white" key={index} variants={wordVariants}>
+                                <motion.h1 className="text-white leading-8 md:leading-14" key={index} variants={wordVariants}>
                                 {word}
                                 </motion.h1>
                             ))}
