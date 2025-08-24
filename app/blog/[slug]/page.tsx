@@ -4,10 +4,13 @@ import data from "../../../public/Data/blog.json"
 import BlogTypes from '@/public/types/blogTypes'
 import SmoothScrollWrapper from '@/components/SmoothScrollWrapper'
 import {Calendar} from "lucide-react"
-export default function page({params}: {params: {slug:string}}) {
+
+
+export default async function page({params}: {params: Promise<{slug:string}>}) {
 
   const blogs = data as BlogTypes[]
-  const singleBlog = blogs.find((b)=> b.slug === params.slug)
+  const {slug} = await params
+  const singleBlog = blogs.find((b)=> b.slug === slug)
 
   if (!singleBlog) {
     return ( <div> No Blogs Found </div> )
