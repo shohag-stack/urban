@@ -5,10 +5,10 @@ import { useState } from "react";
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const logo = "/images/Urban.svg";
+    const logo = "/images/clay.svg";
     
     return (
-        <div className="container bg-gray-100/50 mx-auto top-0 md:top-5 md:left-0 md:right-0 z-40 backdrop-blur-md md:rounded-full fixed">
+        <div className="container bg-gray-100/50 mx-auto top-0 md:top-5 md:left-0 md:right-0 z-40 backdrop-blur-xl md:rounded-full fixed">
             <header>
                 <nav className="w-full py-4 px-4 md:px-7">
                     {/* Desktop Layout */}
@@ -21,19 +21,19 @@ export default function Navbar() {
                         <div className="text-center">
                             <ul className="flex justify-center space-x-8">
                                 <li>
-                                    <Link href={"/"} className="hover:text-gray-600 transition-colors">Home</Link>
+                                    <Link href={"/"} className="hover:text-primary transition-colors">Home</Link>
                                 </li>
                                 <li>
-                                    <Link href={"/listings"} className="hover:text-gray-600 transition-colors">Listings</Link>
+                                    <Link href={"/listings"} className="hover:text-primary transition-colors">Listings</Link>
                                 </li>
                                 <li>
-                                    <Link href={"/about"} className="hover:text-gray-600 transition-colors">About us</Link>
+                                    <Link href={"/about"} className="hover:text-primary transition-colors">About us</Link>
                                 </li>
                                 <li>
-                                    <Link href={"/blog"} className="hover:text-gray-600 transition-colors">Blog</Link>
+                                    <Link href={"/blog"} className="hover:text-primary transition-colors">Blog</Link>
                                 </li>
                                 <li>
-                                    <Link href={"/contact"} className="hover:text-gray-600 transition-colors">Contact</Link>
+                                    <Link href={"/contact"} className="hover:text-primary transition-colors">Contact</Link>
                                 </li>
                             </ul>
                         </div>

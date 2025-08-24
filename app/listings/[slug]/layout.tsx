@@ -16,7 +16,7 @@ export default function Layout({ children }: Readonly<{ children: React.ReactNod
       {
         !isListingPage && (
           <div className='section pb-1'>
-          <div className='py-15 pb-5 sm:py-15 md:py-10 flex gap-2'>
+          <div className='py-15 pb-5 sm:py-15 md:py-5 flex gap-2'>
             <nav>
                 <ul className="flex items-center gap-3 text-gray-600 text-sm">
                     <li>

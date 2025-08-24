@@ -5,6 +5,7 @@ import property from "../../../public/Data/property"
 import Image from "next/image"
 import SideBar from "@/components/SideBar"
 import SmoothScrollWrapper from "@/components/SmoothScrollWrapper"
+import PropertySlider from "@/components/PropertySlider"
 
 export default function Page() {
 
@@ -44,15 +45,15 @@ export default function Page() {
                             <div className="text-md text-gray-500 ml-2 flex items-center gap-2"> <Image className="w-[20] h-[20]" src={map} alt="map" width={16} height={18} /> <p className="mb-0">{properties.location}</p></div>
                         </div>
                     </div>
-                    <div className=" flex flex-col lg:flex-row property-details gap-12">
-                        <div className=" w-full lg:flex-3/4">
+                    <div className=" flex flex-col xl:flex-row property-details gap-12">
+                        <div className=" w-full lg:w-3/4">
                             <div className="feature-image">
                                 <div>
-                                    <Image src={properties.image} width={994} height={557} alt={properties.title}/>
+                                    <PropertySlider sliders={properties.gallery}/>
                                 </div>
                                 <div className="pt-5">
                                     <p className="flex gap-1.5 items-center"><span className="w-4 h-4 rounded-full bg-emerald-400"></span>For sale</p>
-                                    <h2>${properties.price}</h2>
+                                    <h3>${properties.price}</h3>
                                 </div>
                                 <div className="special pt-4">
                                     <h5 className="font-normal">What&apos;s special</h5>
@@ -122,7 +123,7 @@ export default function Page() {
                             </div>
                         </div>
 
-                        <div className=" w-full lg:flex-1/4">
+                        <div className=" w-full lg:w-1/4">
                             <SideBar agent={properties.agent}/>
                         </div>
                     </div>

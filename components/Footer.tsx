@@ -4,7 +4,7 @@ import footerData from '../public/Data/footer'
 import FooterLink from '../components/FooterLink';
 
 export default function Footer() {
-    const logo = "/images/urban-light.svg"; // Update with your logo path
+    const logo = "/images/clay-white.svg"; // Update with your logo path
   return (
     <div className='bg-primary'>
         <div className='section'>
