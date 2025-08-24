@@ -30,8 +30,8 @@ export default function Page() {
     return (
         <SmoothScrollWrapper>
             <div className="bg-gray">
-                <div className='section py-10'>
-                    <div className=" price-info w-1/3 py-5">
+                <div className='section py-2 md:py-10 pb-20'>
+                    <div className=" price-info w-full lg:w-1/3 py-5">
                         <div className="flex items-center justify-between">
                         <h4 className="font-semibold">{properties.title}</h4>
                         </div>
@@ -44,8 +44,8 @@ export default function Page() {
                             <div className="text-md text-gray-500 ml-2 flex items-center gap-2"> <Image className="w-[20] h-[20]" src={map} alt="map" width={16} height={18} /> <p className="mb-0">{properties.location}</p></div>
                         </div>
                     </div>
-                    <div className="flex property-details gap-12">
-                        <div className="flex-3/4">
+                    <div className=" flex flex-col lg:flex-row property-details gap-12">
+                        <div className=" w-full lg:flex-3/4">
                             <div className="feature-image">
                                 <div>
                                     <Image src={properties.image} width={994} height={557} alt={properties.title}/>
@@ -54,7 +54,7 @@ export default function Page() {
                                     <p className="flex gap-1.5 items-center"><span className="w-4 h-4 rounded-full bg-emerald-400"></span>For sale</p>
                                     <h2>${properties.price}</h2>
                                 </div>
-                                <div className="special pt-10">
+                                <div className="special pt-4">
                                     <h5 className="font-normal">What&apos;s special</h5>
                                     <div className="flex flex-wrap gap-2 py-4">
                                         {properties.tags.map((item : string,idx:number)=> (
@@ -122,7 +122,7 @@ export default function Page() {
                             </div>
                         </div>
 
-                        <div className="flex-1/4">
+                        <div className=" w-full lg:flex-1/4">
                             <SideBar agent={properties.agent}/>
                         </div>
                     </div>

@@ -17,6 +17,7 @@ export default function PropertyCardHorizontal({ property, hoverProperty }: Prop
     const [active, setActive] = useState(false)
 
     return (
+        <Link href={`/listings/${property.href}`}>
         <div className={`overflow-hidden flex ${active ? "bg-amber-50" : "bg-white border-none"} items-center`} key={property.id}
         
         onMouseEnter={() => {
@@ -27,11 +28,10 @@ export default function PropertyCardHorizontal({ property, hoverProperty }: Prop
                 hoverProperty(null);
                 setActive(false);
             }} >
-            <div className='px-2 py-2'>
-                <Image src={property.image} alt={property.title} width={200} height={200} className="w-[260] h-[200] object-cover hover:scale-105" />
+            <div className='px-2 py-2 overflow-hidden'>
+                <Image src={property.image} alt={property.title} width={200} height={200} className="w-[260] h-[200] object-cover hover:scale-105 transition-all ease-in-out duration-500" />
             </div>
             <div className="p-4">
-                <Link href={`/listings/${property.href}`}>
                     <div className="items-center justify-between gap-6">
                         <h6 className="text-xl mb-0">${property.price}</h6>
                         <h6 className="font-semibold mt-2 items-start">{property.title}</h6>
@@ -45,8 +45,9 @@ export default function PropertyCardHorizontal({ property, hoverProperty }: Prop
                         </div>
                         <div className="text-md text-gray-500 ml-2 flex items-center gap-2"> <Image className="w-[20] h-[20]" src={map} alt="map" width={16} height={18} /> <p className="mb-0">{property.location}</p></div>
                     </div>
-                </Link>
+                
             </div>
         </div>
+        </Link>
     )
 }

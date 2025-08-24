@@ -33,11 +33,11 @@ export default function Gallery () {
 
   return (
     <div className='section pt-0'>
-        <div className='flex gap-6 h-[500px]'>
+        <div className=' grid grid-cols-1 md:flex gap-6 h-[500px]'>
             {
                 images.map((img,index)=>(
 
-                    <div onMouseLeave={()=> handleMouseLeave(index)} onMouseEnter={()=> handleMouseEnter(index)} key={index} className={`relative ${active === index ? "flex-[2]" : "flex-[1]"} transition-all duration-500`}>
+                    <div onMouseLeave={()=> handleMouseLeave(index)} onMouseEnter={()=> handleMouseEnter(index)} key={index} className={`relative ${active === index ? "md:flex-[2]" : "md:flex-[1]"} transition-all duration-500`}>
                 
                         <video
                             src={img.video}
@@ -54,16 +54,16 @@ export default function Gallery () {
                             transition={{ duration: 0.8, ease: "easeInOut" }}
                             className="absolute bottom-4 left-4 text-white" >
                             
-                            <div className='flex gap-6 flex-col'>
-                            <div>
-                                <CirclePlay size={100} strokeWidth={0.5}/>
+                            <div className=' hidden md:flex gap-2 md:gap-6 flex-col'>
+                            <div className='hidden'>
+                                <CirclePlay className=' w-[50] md:w-[100] h-[40] md:h-[100] object-cover' strokeWidth={0.5}/>
                             </div>
                             <div>
-                                <h4 className='text-white font-medium'>Exceptional Projectss</h4>
-                                <div className='flex gap-4'>
-                                    <button className='btn font-light border-white text-white hover:bg-white/15 px-4 text-sm'>Best of Best</button>
-                                    <button className='btn font-light border-white text-white hover:bg-white/15 text-sm px-4 py-0'>Quality Guaranteed</button>
-                                    <button className='btn font-light border-white text-white hover:bg-white/15 text-sm px-4 py-0'>Good to Buy</button>
+                                <h4 className='text-white font-medium text-2xl md:text-2xl'>Exceptional Projectss</h4>
+                                <div className='flex gap-1 md:gap-4'>
+                                    <button className='btn font-light border-white text-white hover:bg-white/15 text-sm px-1 py-1 md:px-4'>Best of Best</button>
+                                    <button className='btn font-light border-white text-white hover:bg-white/15 text-smpx-1 py-1 md:px-4'>Quality Guaranteed</button>
+                                    <button className='btn font-light border-white text-white hover:bg-white/15 text-sm px-1 py-1 md:px-4'>Good to Buy</button>
                                 </div>
                             </div>
                             </div>

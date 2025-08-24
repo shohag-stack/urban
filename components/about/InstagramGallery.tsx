@@ -11,7 +11,7 @@ export default function InstagramGallery() {
         "/images/image42.png"
     ]
   return (
-    <div className='pt-30 pb-0'>
+    <div className=' pt-15 md:pt-30 pb-0'>
         <div className="w-full overflow-hidden group">
         {/* Slider container */}
             <div className="flex animate-marquee">

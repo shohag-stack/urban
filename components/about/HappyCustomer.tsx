@@ -21,10 +21,10 @@ export default function HappyCustomer() {
         <div className='bg-gray'>
             <div className='section relative'>
                 <h3>HappyCustomer</h3>
-                <div className='pt-10 embla' ref={emblaRef}>
+                <div className=' pb-[70px] md:pb-0 pt-5 md:pt-10 embla' ref={emblaRef}>
                     <div className="embla__container">
                         <div className="embla_slide">
-                            <p className='text-2xl text-primary w-3/4'>Our platform is your gateway to an extensive collection of properties, carefully curated to match your unique needs and preferences.
+                            <p className='text-2xl text-primary w-full md:w-3/4'>Our platform is your gateway to an extensive collection of properties, carefully curated to match your unique needs and preferences.
                                 Experience a seamless journey as you explore our diverse range of listings, each promising the perfect blend of comfort and convenience</p>
                             <div className='user'>
                                 <div className='pb-4'><Image src={avatar} alt='avatar' className='rounded-full' height={70} width={70} /></div>
@@ -36,7 +36,7 @@ export default function HappyCustomer() {
                         </div>
 
                         <div className="embla_slide">
-                            <p className='text-2xl text-primary w-3/4'>Our platform is your gateway to an extensive collection of properties, carefully curated to match your unique needs and preferences.
+                            <p className='text-2xl text-primary w-full md:w-3/4'>Our platform is your gateway to an extensive collection of properties, carefully curated to match your unique needs and preferences.
                                 Experience a seamless journey as you explore our diverse range of listings, each promising the perfect blend of comfort and convenience</p>
                             <div className='user'>
                                 <div className='pb-4'><Image src={avatar} alt='avatar' className='rounded-full' height={70} width={70} /></div>
@@ -48,7 +48,7 @@ export default function HappyCustomer() {
                         </div>
 
                         <div className="embla_slide">
-                            <p className='text-2xl text-primary w-3/4'>Our platform is your gateway to an extensive collection of properties, carefully curated to match your unique needs and preferences.
+                            <p className='text-2xl text-primary w-full md:w-3/4'>Our platform is your gateway to an extensive collection of properties, carefully curated to match your unique needs and preferences.
                                 Experience a seamless journey as you explore our diverse range of listings, each promising the perfect blend of comfort and convenience</p>
                             <div className='user'>
                                 <div className='pb-4'><Image src={avatar} alt='avatar' className='rounded-full' height={70} width={70} /></div>
@@ -61,7 +61,7 @@ export default function HappyCustomer() {
                     </div>
                 </div>
 
-                <div className='absolute top-3/4 right-0'>
+                <div className='absolute mx-auto bottom-10 md:top-3/4 md:right-0'>
                     <button
                         onClick={scrollPrev}
                         className="btn"

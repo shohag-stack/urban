@@ -8,7 +8,7 @@ export default function Navbar() {
     const logo = "/images/Urban.svg";
     
     return (
-        <div className="container bg-gray-100/50 mx-auto top-0 md:top-5 md:left-0 md:right-0 z-40 backdrop-blur-md md:rounded-full fixed max-w-full">
+        <div className="container bg-gray-100/50 mx-auto top-0 md:top-5 md:left-0 md:right-0 z-40 backdrop-blur-md md:rounded-full fixed">
             <header>
                 <nav className="w-full py-4 px-4 md:px-7">
                     {/* Desktop Layout */}
@@ -58,10 +58,10 @@ export default function Navbar() {
                                 className="p-2 rounded-md hover:bg-gray-200/50 transition-colors"
                                 aria-label="Toggle menu"
                             >
-                                <svg 
+                                <svg
                                     className="w-6 h-6" 
                                     fill="none" 
-                                    stroke="currentColor" 
+                                    stroke="#000000" 
                                     viewBox="0 0 24 24"
                                 >
                                     {isMenuOpen ? (

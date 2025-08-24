@@ -77,7 +77,7 @@ function ListingsContent() {
                         </div>
                     ) : (
                         <div className={`flex md:flex-row flex-col relative gap-15`}>
-                            <div className=' md:flex-1/2 hidden flex-col gap-y-2 overflow-y-scroll'>
+                            <div className='hidden md:flex md:flex-1/2 flex-col gap-y-2 overflow-y-scroll'>
                                 {
                                     filteredProperty.map((property, idx) => {
                                         return (
@@ -86,7 +86,7 @@ function ListingsContent() {
                                     })
                                 }
                             </div>
-                            <div className=' w-full md:flex-1/2 h-[80vh] md:sticky top-30'>
+                            <div className='md:flex-1/2 w-full h-[80vh] md:sticky top-30'>
                                 <APIProvider apiKey={mapKey}>
                                     <PropertyMap hoverProperty={hoverProperty} filteredProperty={filteredProperty} />
                                 </APIProvider>

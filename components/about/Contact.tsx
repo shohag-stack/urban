@@ -7,12 +7,11 @@ export default function Contact() {
 
     const image = "/images/architect.png"
 
-
     return (
         <div>
             <div className='section pb-0'>
-                <div className='pt-10 text-center pb-20'>
-                    <h1>Contact</h1>
+                <div className='pt-15 text-center pb-5 md:pb-20'>
+                    <h2>Contact</h2>
                 </div>
             </div>
             <div className='relative'>
@@ -20,7 +19,7 @@ export default function Contact() {
             </div>
             <div className='bg-gray'>
                 <div className='section'>
-                    <div className='flex gap-40'>
+                    <div className=' flex flex-col lg:flex-row gap-10 md:gap-10 lg:gap-40'>
                         <div className='flex-1/2'>
                             <h3>Please do not hesitate to contact us</h3>
                             <div>
@@ -28,8 +27,8 @@ export default function Contact() {
                                 <p>postulant qui, fugit dolor et eam. Quo cu putent causae. Sit ea diam ullum, tation cu voluptua facilisi nec no. Ei laudem iudicabit duo, at quem munere eam putant mediocrem.</p>
                             </div>
                         </div>
-                        <div className='flex flex-wrap flex-1/2'>
-                            <div className='w-1/2 h-fit'>
+                        <div className='flex flex-wrap flex-1/2 h-fit gap-10'>
+                            <div className=' w-full sm:w-1/2'>
                                 <h6>E-mail</h6>
                                 <p>qi144@realestate.com</p>
                             </div>

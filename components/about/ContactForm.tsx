@@ -6,7 +6,7 @@ export default function ContactForm() {
         <div>
             <div>
                 <div className='section'>
-                    <div className='flex gap-40'>
+                    <div className='flex flex-col md:flex-row gap-10 sm:gap-40'>
                         <div className='flex-1/2'>
                             <h3>We are looking forward to your enquiry</h3>
                             <div>
