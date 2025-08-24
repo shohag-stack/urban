@@ -73,7 +73,7 @@ export function FiltersNav() {
       {
         isListingPage && (
           <div className='section pb-0 md:pb-4'>
-          <div className='py-10 pt-15 md:pt-15 sm:py-15 md:py-4 sm:flex flex flex-wrap md:gap-2 gap-4'>
+          <div className=' mt-10 mb-5 md:mt-10 lg:pt-5 xl:mt-0 sm:flex flex flex-wrap md:gap-2 gap-4'>
             <SearchInput/>
             <ToggleButton options={["Buy", 'Rent']} onChange={setTransactionType} />
             <SelectFilter value={price} onChange={setPrice} options={priceOptions}/>
