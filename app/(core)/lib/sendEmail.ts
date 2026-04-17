@@ -1,8 +1,8 @@
-'use server'
+"use server";
 
-import { Resend } from 'resend'
+import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 interface Form {
   firstName: string;
@@ -17,16 +17,35 @@ interface Form {
   budget: string;
 }
 
-
-
 export async function sendEmail(form: Form) {
-  const { firstName, lastName, email, phone, budget, hearAboutUs, projectDetails } = form
-  const fullName = `${firstName} ${lastName}`
+  const {
+    firstName,
+    lastName,
+    email,
+    phone,
+    budget,
+    hearAboutUs,
+    projectDetails,
+  } = form;
+  const fullName = `${firstName} ${lastName}`;
+
+  const toEmail = process.env.CONTACT_EMAIL;
+  const fromEmail = process.env.RESEND_FROM_EMAIL;
+
+  if (!toEmail) {
+    throw new Error("CONTACT_EMAIL is not defined in environment variables");
+  }
+
+  if (!fromEmail) {
+    throw new Error(
+      "RESEND_FROM_EMAIL is not defined in environment variables",
+    );
+  }
 
   try {
     const res = await resend.emails.send({
-      from: process.env.RESEND_FROM_EMAIL,
-      to: process.env.CONTACT_EMAIL,
+      from: fromEmail,
+      to: toEmail,
       subject: `New inquiry from ${fullName}`,
       html: `
         <h2>New Contact Form Submission</h2>
@@ -38,12 +57,10 @@ export async function sendEmail(form: Form) {
         <p><strong>Project Details:</strong></p>
         <p>${projectDetails}</p>
       `,
-    })
-    console.log(res)
-    return { success: true,
-        message: 'Email sent successfully'
-     }
+    });
+    console.log(res);
+    return { success: true, message: "Email sent successfully" };
   } catch (error) {
-    return { success: false, message: 'Failed to send email' }
+    return { success: false, message: "Failed to send email" };
   }
 }
