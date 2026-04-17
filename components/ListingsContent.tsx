@@ -41,7 +41,7 @@ export default function ListingsContent() {
     const filteredProperty = property.filter((p) => {
         const priceRange = parsePriceRange(minPrice)
         return (
-            (!transactionType || transactionType.toLowerCase() === p.transaction_type.toLowerCase()) &&
+            (!transactionType || transactionType.toLowerCase() === p.transactionType.toLowerCase()) &&
             (!beds || parseInt(beds) === p.bedrooms) &&
             (!minPrice || (parseInt(p.price.replace(/[^0-9]/g, '')) >= priceRange.min && parseInt(p.price.replace(/[^0-9]/g, '')) <= priceRange.max)) &&
             (!homeType || homeType.toLowerCase() === p.type.toLowerCase())
