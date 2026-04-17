@@ -18,7 +18,7 @@ export default function PropertyCardHorizontal({ property, hoverProperty }: Prop
 
     return (
         <Link href={`/listings/${property.slug.current}`}>
-        <div className={`overflow-hidden flex ${active ? "bg-amber-50" : "bg-white border-none"} items-center`} key={property.id}
+        <div className={`overflow-hidden flex ${active ? "bg-amber-50" : "bg-white border-none"} items-center`} key={property._id}
         
         onMouseEnter={() => {
             hoverProperty(property);

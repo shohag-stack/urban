@@ -42,8 +42,8 @@ export default function PropertyMap({filteredProperty, hoverProperty} : MapPrope
         {
           filteredProperty.map((property, idx)=>{
           const isActive = 
-          (hoverProperty && hoverProperty.id === property.id) || 
-          (selectedProperty && selectedProperty.id === property.id);
+          (hoverProperty && hoverProperty._id === property._id) || 
+          (selectedProperty && selectedProperty._id === property._id);
 
           return property.coordinates && (
                 <AdvancedMarker clickable={true} onClick={()=> setSelectedProperty(property)} title={property.title} position={{lat: property.coordinates.lat, lng: property.coordinates.lng}} key={idx}> 
@@ -68,10 +68,10 @@ export default function PropertyMap({filteredProperty, hoverProperty} : MapPrope
                   lng: currentProperty.coordinates.lng
                 }} 
               >
-                    <div className="overflow-hidden flex" key={currentProperty.id}>
-                      <Image src={currentProperty.image} alt={currentProperty.title} width={424} height={460} className="w-[70] h-[70] object-cover hover:scale-105" />
+                    <div className="overflow-hidden flex" key={currentProperty._id}>
+                      <Image src={currentProperty.mainImage.asset.url} alt={currentProperty.title} width={424} height={460} className="w-[70] h-[70] object-cover hover:scale-105" />
                       <div className="px-4 bg-white">
-                          <Link href={`/listings/${currentProperty.href || ''}`}>
+                          <Link href={`/listings/${currentProperty.slug.current || ''}`}>
                           <div className="flex items-center justify-between">
                               <h6 className="text-sm mb-0 px-2 py-2 bg-gray rounded-full">${currentProperty.price}</h6>
                           </div>
