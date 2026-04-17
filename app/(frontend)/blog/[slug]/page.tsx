@@ -9,6 +9,7 @@ import { ALL_POST_SLUG } from "@/sanity/queries/postQueries";
 import { PortableText } from "@portabletext/react";
 import Blog from "@/Data/blog";
 import { components } from "@/app/lib/component";
+import ShareButtons from "@/components/cards/Blog/ShareButtons";
 
 export async function generateStaticParams() {
   if (!client) {
@@ -22,6 +23,44 @@ export async function generateStaticParams() {
   return posts.map((post: { slug: string }) => ({
     slug: post.slug,
   }));
+
+}
+
+
+export async function generateMetadata({ params }: { params: { slug: string }}) {
+  let singleBlog = Blog.find(
+    (item) => item.slug.current === params.slug
+  );
+
+  if (client) {
+    try {
+      const sanityBlog = await client.fetch(SINGLE_POST_QUERY, {
+        slug: params.slug,
+      });
+      singleBlog = sanityBlog;
+    } catch(err) {
+      console.log("error on single blog metadata function", err)
+    }
+  }
+
+  if (!singleBlog) return {};
+
+  return {
+    title: singleBlog.title,
+    description: singleBlog.excerpt,
+    openGraph: {
+      title: singleBlog.title,
+      description: singleBlog.excerpt,
+      url: `${process.env.NEXT_PUBLIC_SITE_URL}/blog/${params.slug}`,
+      images: [
+        {
+          url: singleBlog.featuredImage.asset.url,
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
+  };
 }
 
 export default async function page({ params }: { params: { slug: string } }) {
@@ -86,6 +125,7 @@ export default async function page({ params }: { params: { slug: string } }) {
             </div>
             {/* <p>{singleBlog.content}</p> */}
             <PortableText components={components} value={singleBlog.body} />
+            <ShareButtons title={singleBlog.title} slug={singleBlog.slug.current} />
           </div>
         </div>
       </div>
