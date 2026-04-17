@@ -9,7 +9,7 @@ import BlogTypes from "@/types/blogTypes";
 const OPTIONS = { next: { revalidate: 30 } };
 
 export default async function page() {
-  let posts = Blog;
+  let posts: BlogTypes[] = Blog;
 
   if (client) {
     try {

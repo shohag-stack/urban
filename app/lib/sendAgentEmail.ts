@@ -1,6 +1,7 @@
 'use server'
 
-import { sendEmail } from "@/app/(core)/lib/sendEmail"
+import sendEmail from "./sendEmail"
+
 
 type AgentForm = {
   name: string

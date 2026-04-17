@@ -7,8 +7,8 @@ import { client } from "@/sanity/lib/client";
 import { SINGLE_POST_QUERY } from "@/sanity/queries/postQueries";
 import { ALL_POST_SLUG } from "@/sanity/queries/postQueries";
 import { PortableText } from "@portabletext/react";
-import { components } from "@/app/(core)/lib/component";
 import Blog from "@/Data/blog";
+import { components } from "@/app/lib/component";
 
 export async function generateStaticParams() {
   if (!client) {
@@ -41,7 +41,6 @@ export default async function page({ params }: { params: { slug: string } }) {
     }
   }
 
-  console.log("showing single blog post", singleBlog);
 
   if (!singleBlog) {
     return <div>No Blog Found</div>;

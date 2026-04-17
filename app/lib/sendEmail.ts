@@ -17,7 +17,7 @@ interface Form {
   budget: string;
 }
 
-export async function sendEmail(form: Form) {
+export default async function sendEmail(form: Form) {
   const {
     firstName,
     lastName,

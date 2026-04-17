@@ -12,6 +12,6 @@ export default interface BlogTypes {
   };
   categories: string[];
   publishedAt: string;
-  body: PortableTextBlock[]; // ONLY SANITY
+  body: any[]; // ONLY SANITY
   featured: boolean;
 }

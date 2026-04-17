@@ -1,6 +1,6 @@
 "use client";
 
-import subscribe from "@/app/(core)/lib/subscribe";
+import subscribe from "@/app/lib/subscribe";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 

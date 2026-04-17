@@ -1,5 +1,5 @@
 "use client";
-import { sendEmail } from "@/app/(core)/lib/sendEmail";
+import sendEmail from "@/app/lib/sendEmail";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 

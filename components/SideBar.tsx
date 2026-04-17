@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import Property from "@/types/types";
 import Image from "next/image";
-import { sendAgentEmail } from "@/app/(core)/lib/sendAgentEmail";
+import { sendAgentEmail } from "@/app/lib/sendAgentEmail";
 
 export type AgentProps = {
   agent: Property["agent"];
