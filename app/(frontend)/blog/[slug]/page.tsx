@@ -8,7 +8,7 @@ import { SINGLE_POST_QUERY } from "@/sanity/queries/postQueries";
 import { ALL_POST_SLUG } from "@/sanity/queries/postQueries";
 import { PortableText } from "@portabletext/react";
 import Blog from "@/Data/blog";
-import { components } from "@/app/lib/component";
+import { components } from "@/app/(core)/lib/component";
 import ShareButtons from "@/components/cards/Blog/ShareButtons";
 
 export async function generateStaticParams() {
