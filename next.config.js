@@ -1,3 +1,5 @@
+import { hostname } from "os";
+
 const nextConfig = {
   /* config options here */
   images: {
@@ -20,6 +22,9 @@ const nextConfig = {
         hostname: "cdn.sanity.io",
         port: "",
         pathname: "/**",
+      },
+      {
+        hostname: "res.cloudinary.com"
       }
     ],
   },

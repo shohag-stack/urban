@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Manrope, Bricolage_Grotesque } from "next/font/google";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import RaysoCta from "@/components/RaysoCta";
 
 export const metadata: Metadata = {
   title: "Clay Real estate Agent",
@@ -26,6 +25,7 @@ export default function Layout({
   return (
     <html lang="en">
       <body className={`${manrope.variable} ${bricolage.variable}`}>
+        <RaysoCta />
         {children}
       </body>
     </html>
